@@ -11,3 +11,12 @@ jobs:
         run: |
           node -v
           npm -v
+  sonar-quality-check: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo a string
+        run: echo "Hello World"
+      - name: MultiLine script
+        run: |
+          node -v
+          npm -v
