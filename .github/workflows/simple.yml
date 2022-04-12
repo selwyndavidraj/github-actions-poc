@@ -2,7 +2,7 @@ name: Shell Commands
 on: 
   - push
 jobs:
-  run-shell-command: 
+  setup-code: 
     runs-on: ubuntu-latest
     steps:
       - name: Echo a string
@@ -11,12 +11,38 @@ jobs:
         run: |
           node -v
           npm -v
+  unit-and-integration-test: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo a string
+        run: echo "Unit and Integration checks"    
+  scanning: 
+    runs-on: ubuntu-latest
+    steps:
+    - name: Echo a string
+      run: echo "Scanning"    
   sonar-quality-check: 
     runs-on: ubuntu-latest
     steps:
       - name: Echo a string
-        run: echo "Hello World"
-      - name: MultiLine script
-        run: |
-          node -v
-          npm -v
+        run: echo "Perform quality checks"      
+  fortify: 
+    runs-on: ubuntu-latest
+    steps:
+    - name: Echo a string
+      run: echo "Fortify"    
+  dockerize-and-publish: 
+    runs-on: ubuntu-latest
+    steps:
+    - name: Echo a string
+      run: echo "Dockerize and Publish"  
+  spinnaker-deploy: 
+    runs-on: ubuntu-latest
+    steps:
+    - name: Echo a string
+      run: echo "Spinnaker Deploy"        
+  clean-up: 
+    runs-on: ubuntu-latest
+    steps:
+    - name: Echo a string
+      run: echo "Clean up"   
